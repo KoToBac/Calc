@@ -15,7 +15,7 @@ public class Calculator {
         for (int i = 0; i < exp.length();i++) {
             if(exp.contains(actions[i])){
                 actionIndex = i;
-            colActions++;}
+                colActions++;}
             if (colActions > 2) throw new Exception("Количество знаков действия не может быть больше 1");
 
         }
@@ -61,7 +61,9 @@ public class Calculator {
                 }
 
                 if (isRoman) {
-                    System.out.println(converter.intToRoman(result));
+                    if (result > 0) {
+                        System.out.println(converter.intToRoman(result));
+                    } else throw new Exception("В римской системе нет отрицательных чисел");
                 } else {
                     System.out.println(result);
                 }
